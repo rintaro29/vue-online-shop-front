@@ -26,7 +26,6 @@ export default defineComponent({
 <script setup>
 import { onMounted } from 'vue'
 import { productsStore } from '@/stores/products'
-// import { useRouter } from 'vue-router'
 
 const store = productsStore()
 const router = useRouter()
