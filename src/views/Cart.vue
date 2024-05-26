@@ -1,7 +1,8 @@
 <template>
+  <button @click="router.push({ name: 'Catalog' })">カタログへ戻る</button>
+
   <div v-if="!store.cart.length" style="text-align: center">
     <p>カートは空です</p>
-    <button @click="router.push({ name: 'Catalog' })">カタログへ戻る</button>
   </div>
   <div class="cart-items">
     <div class="cart-item" v-for="item in store.cart" :key="item.id">
@@ -10,6 +11,7 @@
         <span>ブランド: {{ item.brand }}</span>
         <span>カテゴリー: {{ item.category }}</span>
         <span>価格: {{ item.price }}</span>
+        <button @click="removeFromCart(item.id)">削除</button>
       </div>
     </div>
   </div>
@@ -26,8 +28,12 @@ export default defineComponent({
 import { productsStore } from '@/stores/products'
 
 import { useRouter } from 'vue-router'
-const router = useRouter
+const router = useRouter()
 const store = productsStore()
+
+const removeFromCart = (id) => {
+  store.removeFromCart(id)
+}
 </script>
 
 <style scoped>
