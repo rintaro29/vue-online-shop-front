@@ -1,6 +1,6 @@
-# vue-todo
+# vue-online-shop-front
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple online shop site to practice Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
